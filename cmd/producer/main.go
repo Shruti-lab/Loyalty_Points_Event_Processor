@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/segmentio/kafka-go"
-	"github.com/yourname/loyalty-platform/internal/models"
+	"github.com/Shruti-lab/Loyalty_Points_Event_Processor/internal/models"
 )
 
 func main() {

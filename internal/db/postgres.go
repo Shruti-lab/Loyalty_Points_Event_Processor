@@ -6,7 +6,7 @@ import (
 	"time"
 
 	_ "github.com/lib/pq"
-	"github.com/yourname/loyalty-platform/internal/models"
+	"github.com/Shruti-lab/Loyalty_Points_Event_Processor/internal/models"
 )
 
 func InitDB() *sql.DB {
