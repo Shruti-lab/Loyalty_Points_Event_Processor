@@ -8,6 +8,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	_ "github.com/lib/pq"
 )
 
@@ -34,7 +35,13 @@ func main() {
 			"points":  points,
 		})
 	}).Methods("GET")
-
+	
+	initMetrics(r)
 	log.Println("API running on :8080")
 	http.ListenAndServe(":8080", r)
+}
+
+
+func initMetrics(r *mux.Router) {
+	r.Handle("/metrics", promhttp.Handler())
 }
