@@ -32,7 +32,7 @@ curl http://localhost:8080/points/user-123
 
 ```
 ## Project Structure
-
+```
 loyalty-platform/
 ├── docker-compose.yml
 ├── go.mod
@@ -52,3 +52,17 @@ loyalty-platform/
 │       └── postgres.go     # DB insert logic
 └── sql/
     └── init.sql            # Postgres schema
+```
+
+**Description:**
+- **cmd/producer/**: Contains the main entry point for the Kafka event producer.
+- **cmd/consumer/**: Contains the main entry point for the Kafka event consumer, which processes and stores events in the database.
+- **internal/kafka/**: Kafka writer setup and configuration.
+- **internal/models/**: Go structures defining the event schema.
+- **internal/db/**: Database interaction logic, specifically for PostgreSQL.
+- **sql/**: SQL scripts for initializing the database schema.
+- **docker-compose.yml**: Orchestrates services for local development.
+- **go.mod / go.sum**: Manage Go modules and dependencies.
+
+    
+    
